@@ -1,6 +1,6 @@
 {
   "name": "scalp",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "description": "A simpler way to scaffold",
   "repository": {
     "type": "git",
@@ -11,7 +11,15 @@
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["scaffold", "yo", "template", "project", "generator", "brunch", "skeleton"],
+  "keywords": [
+    "scaffold",
+    "yo",
+    "template",
+    "project",
+    "generator",
+    "brunch",
+    "skeleton"
+  ],
   "author": "Ben Monro <ben.monro@gmail.com>",
   "license": "MIT",
   "bin": {
@@ -27,6 +35,7 @@
     "commander": "^2.9.0",
     "find-in-files": "^0.1.2",
     "init-skeleton": "^0.7.1",
+    "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
     "prompt-sync": "^3.0.0",
     "replace": "^0.3.0",
