@@ -1,15 +1,19 @@
 {
   "name": "scalp",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A simpler way to scaffold",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bare-bones/scalp"
+  },
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["scaffold", "yo", "template", "project", "generator", "brunch", "skeleton"],
+  "author": "Ben Monro <ben.monro@gmail.com>",
+  "license": "MIT",
   "bin": {
     "scalp": "./lib/cli.js"
   },
