@@ -39,6 +39,7 @@
     "lodash": "^3.10.1",
     "prompt-sync": "^3.0.0",
     "replace": "^0.3.0",
+    "rimraf": "^2.5.0",
     "string": "^3.3.1"
   }
 }
