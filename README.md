@@ -12,4 +12,4 @@ a simpler way to scaffold
 ```
  scalp new <path> [-s url] 
 ```
-creates a new skeleton with prompts for variables in <path> (default .) will optionally accept a github url to use as a skeleton
+creates a new skeleton with prompts for variables in `<path>` (defaults to current directory) will optionally accept a github url to use as a skeleton
