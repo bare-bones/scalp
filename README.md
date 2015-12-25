@@ -23,3 +23,8 @@ If this looks very similar to Brunch to you, that's because it is.  Scalp takes 
 adds a scalp.config.js file to the current directory, pre-populated with any found variables.
 
 scalp uses [prompt](https://www.npmjs.com/package/prompt) for validation and other options.
+
+
+Scalp look for any string in any file that starts with 'scalp_' and treat that as a variable. 
+By default, the user will be prompted with a humanized version of the variable, but you can configure how the user supplies
+those values.  
