@@ -42,9 +42,9 @@ program
 
 program
     .command('new [path]')
-    // .option('-s, --skeleton [name]', 'skeleton name or URL from brunch.io/skeletons')
+    .option('-s, --skeleton [name]', 'skeleton name or URL from brunch.io/skeletons')
     .action((rootPath = ".", options) => {
-
+        console.log(options);
         const skeleton = options.skeleton || process.env.BRUNCH_INIT_SKELETON || defaultSkeleton;
         initSkeleton(skeleton, {rootPath}, err => {
 
