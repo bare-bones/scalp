@@ -4,7 +4,7 @@ import {values, keys} from 'lodash';
 import program from 'commander';
 import replace from 'replace';
 import {find} from 'find-in-files';
-import {prompt} from 'prompt-sync';
+import prompt from 'prompt';
 import {writeFile} from 'fs';
 import {js_beautify as beautify} from 'js-beautify';
 import {resolve} from 'path';
@@ -13,7 +13,6 @@ import rimraf from 'rimraf';
 
 import {init as initSkeleton} from 'init-skeleton';
 const defaultSkeleton = 'https://github.com/bare-bones/scalp-simple';
-//console.log(defaultSkeleton)
 
 function findMatchesIn(rootPath) {
     return find('scalp_([\\w_-]+)', rootPath).then(results => {
@@ -21,7 +20,7 @@ function findMatchesIn(rootPath) {
         values(results).forEach(result => {
             result.matches.forEach(match => {
                 let key = match.replace('scalp_', '');
-                matches[key] = {prompt: S(key).humanize().s}
+                matches[key] = {description: S(key).humanize().s}
             })
         });
         return matches;
@@ -51,25 +50,32 @@ program
 
             findMatchesIn(rootPath).then(matches => {
 
-                for (let key in matches) {
-                    let variableInfo = matches[key];
-                    console.log(variableInfo.prompt);
-                    matches[key].value = prompt();
-                    replace({
-                        regex: `scalp_${key}`,
-                        replacement: matches[key].value,
-                        paths: [rootPath],
-                        recursive: true,
-                        silent: true
-                    });
-                }
 
-                rimraf(resolve(`${rootPath}/scalp.config.js`), {},err => {
-                    if(err) {
-                        console.error(err);
-                        return;
+
+                let schema = {message: 'asdf',properties:matches};
+                prompt.message = "";
+                prompt.delimiter = "";
+                prompt.start();
+                prompt.get(schema, (err, result) => {
+                    for (let key in matches) {
+                        let variableInfo = matches[key];
+                        replace({
+                            regex: `scalp_${key}`,
+                            replacement: result[key],
+                            paths: [rootPath],
+                            recursive: true,
+                            silent: true
+                        });
                     }
+                    rimraf(resolve(`${rootPath}/scalp.config.js`), {},err => {
+                        if(err) {
+                            console.error(err);
+                            return;
+                        }
+                    });
                 });
+
+
             });
 
         });

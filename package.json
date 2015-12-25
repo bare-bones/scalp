@@ -37,6 +37,7 @@
     "init-skeleton": "^0.7.1",
     "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
+    "prompt": "^0.2.14",
     "prompt-sync": "^3.0.0",
     "replace": "^0.3.0",
     "rimraf": "^2.5.0",

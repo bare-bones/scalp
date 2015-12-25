@@ -21,3 +21,5 @@ If this looks very similar to Brunch to you, that's because it is.  Scalp takes 
  scalp init <path>
 ```
 adds a scalp.config.js file to the current directory, pre-populated with any found variables.
+
+scalp uses [prompt](https://www.npmjs.com/package/prompt) for validation and other options.
