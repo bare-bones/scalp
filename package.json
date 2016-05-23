@@ -6,7 +6,6 @@
     "type": "git",
     "url": "https://github.com/bare-bones/scalp"
   },
-  "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,12 +32,14 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "find": "^0.2.4",
     "find-in-files": "^0.1.2",
     "init-skeleton": "^0.7.1",
     "js-beautify": "^1.5.10",
     "lodash": "^3.10.1",
     "prompt": "^0.2.14",
     "prompt-sync": "^3.0.0",
+    "q": "^1.4.1",
     "replace": "^0.3.0",
     "rimraf": "^2.5.0",
     "string": "^3.3.1"

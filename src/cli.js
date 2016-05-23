@@ -3,7 +3,7 @@
 import {values, keys} from 'lodash';
 import program from 'commander';
 import replace from 'replace';
-import {find} from 'find-in-files';
+import {find} from './findInFiles';
 import prompt from 'prompt';
 import {writeFile} from 'fs';
 import {js_beautify as beautify} from 'js-beautify';
@@ -52,7 +52,7 @@ program
 
 
 
-                let schema = {message: 'asdf',properties:matches};
+                let schema = {properties:matches};
                 prompt.message = "";
                 prompt.delimiter = "";
                 prompt.start();
